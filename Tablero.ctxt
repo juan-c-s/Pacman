@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Tablero
+comment1.params=juego
+comment1.target=Tablero(Juego)
+comment1.text=\n\ Constructor\n\ Se\ recibe\ la\ referencia\ al\ juego,\ para\ poder\ acceder\ al\ pacman\n\ Se\ lee\ el\ "archivo"\ con\ la\ informaci\u00F3n\ del\ laberinto,\ la\ posici\u00F3n\n\ del\ pacman\ y\ la\ salida\n\ @param\ juego\ \n
+comment2.params=
+comment2.target=void\ leerArchivo()
+comment2.text=\n\ En\ este\ m\u00E9todo\ se\ lee\ el\ laberinto.\n\ Cuando\ aprendamos\ archivos,\ se\ leer\u00E1\ la\ informaci\u00F3n\ de\ un\ archivo\n\ texto.\n
+comment3.params=
+comment3.target=void\ dibujarTablero()
+comment3.text=\n\ En\ este\ m\u00E9todo\ se\ dibuja\ el\ tablero.\n\ A\ cada\ celda\ se\ le\ invoca\ el\ m\u00E9toco\ "caracterCelda",\ que\ devuelve\n\ un\ caracter\ que\ representa\ el\ contenido\ de\ la\ celda.\n
+numComments=4

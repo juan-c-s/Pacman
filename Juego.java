@@ -109,7 +109,7 @@ public class Juego {
         if(nueva.caracterCelda() =='*'){
             return false;
         }
-        if(nueva.caracterCelda()==' '){
+        if(nueva.caracterCelda()=='.'){
             double arepita = Math.random(); 
         if(arepita<0.5){
              pacman.resta();

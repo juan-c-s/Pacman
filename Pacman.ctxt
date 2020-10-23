@@ -1,10 +1,12 @@
 #BlueJ class context
 comment0.target=Pacman
-comment0.text=\n\ En\ esta\ clase\ se\ guarda\ la\ informaci\u00F3n\ acerca\ del\ Pacman\n\ El\ Pacman\ extiende\ la\ clase\ Caracter,\ y\ por\ lo\ tanto\ hereda\ sus\n\ atributos\ y\ m\u00E9todos\n\ @author\ Helmuth\ Trefftz\n
+comment0.text=\n\ En\ esta\ clase\ se\ guarda\ la\ informaci\u00F3n\ acerca\ del\ Pacman\n\ El\ Pacman\ extiende\ la\ clase\ Caracter,\ y\ por\ lo\ tanto\ hereda\ sus\n\ atributos\ y\ m\u00E9todos\n\ @author\ Juan\ Camilo\ Salazar\ y\ Federico\ Velez\n
 comment1.params=tipo\ posicion\ representacion\ puntosVida
 comment1.target=Pacman(int,\ Posicion,\ char,\ int)
 comment2.params=
 comment2.target=int\ resta()
+comment2.text=\n\ @return\ puntoVida\ con\ la\ resta\ respectiva\n
 comment3.params=
 comment3.target=int\ suma()
+comment3.text=\n\ @return\ puntoVida\ con\ la\ suma\ respectiva\n
 numComments=4

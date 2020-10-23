@@ -64,27 +64,37 @@ public class Tablero {
         numCols = lineScan.nextInt();
         // Definir el tamaño del tablero
         tablero = new Celda[numFilas][numCols];
+        int arepitas = 0;
         // Leer cada una de las filas que conforman el laberinto
         for (int fila = 0; fila < numFilas; fila++) {
             linea = archivo[i];
             i++;
             for (int col = 0; col < numCols; col++) {
-                char c = linea.charAt(col);
-                // esMuro, esSalida, tienearepita, caracter
-                if (c == '*') {
-                    tablero[fila][col] = new Celda(true, false, false, null);
-                }
-                if (c == ' ') {
-                    tablero[fila][col] = new Celda(false, false, false, null);
-                }
-                if(c=='O'){
-                    tablero[fila][col] = new Celda(false,true,false,null);
-                }
-                if(c=='.'){
-                    tablero[fila][col] = new Celda(false,false,true,null);
+                  
+                  long filaR = Math.round(Math.random()*14);
+                  long colR = Math.round(Math.random()*16);
+                  char c = linea.charAt(col);
+                  char l = linea.charAt((int)colR);
+                if(l==' '&& arepitas<=10){
+                 l = '.';
+                 arepitas++;
                 }
                 
+                // esMuro, esSalida, tienearepita, caracter
+                    if (c == '*') {
+                    tablero[fila][col] = new Celda(true, false, false, null);
+                    }
+                    if (c == ' ') {
+                    tablero[fila][col] = new Celda(false, false, false, null);
+                    }
+                    if(c=='O'){
+                    tablero[fila][col] = new Celda(false,true,false,null);
+                    }
+                    if(c=='.'){
+                    tablero[fila][col] = new Celda(false,false,true,null);
+                    }
             }
+            
         }
         // Leer la información adicional. Esto es:
         // (i) La posición del Pacman (empieza por P)
@@ -123,10 +133,8 @@ public class Tablero {
         String s = "";
         for (int fila = 0; fila < numFilas; fila++) {
             for (int col = 0; col < numCols; col++) {
-                if(tablero[fila][col].caracterCelda() == ' '){
-                 s+=  '.';
-                }
-                else s += tablero[fila][col].caracterCelda();
+                
+                 s += tablero[fila][col].caracterCelda();
             }
             s += "\n";
         }

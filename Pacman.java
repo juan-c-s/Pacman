@@ -19,14 +19,14 @@ public class Pacman extends Caracter {
  * @return puntoVida con la resta respectiva
  */
     public int resta(){
-     puntosVida = puntosVida-2;  
+     puntosVida = puntosVida-5;  
      return puntosVida;
     }
 /**
  * @return puntoVida con la suma respectiva
  */
         public int suma(){
-     puntosVida = puntosVida+2;  
+     puntosVida = puntosVida+1;  
      return puntosVida;
     }
 

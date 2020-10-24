@@ -38,6 +38,7 @@ public class Juego {
             int col = pacman.posicion.col;
             int nuevaFila = fila;
             int nuevaCol = col;
+            boolean teclaInvalida = false;
             switch (linea) {
                 // En este punto se inserta el código para las teclas
                 // "a" y "d"
@@ -56,11 +57,11 @@ public class Juego {
                     nuevaCol = col+1;
                     break;
                 default:
-                    nuevaFila = fila;
-                    nuevaCol = col;
+                    System.out.println("caracter inválido");
+                    teclaInvalida = true;
                     break;
             }
-            if (validarCasilla(nuevaFila, nuevaCol)) {
+            if (validarCasilla(nuevaFila, nuevaCol)&&!teclaInvalida) {
                 Celda anterior = tablero.tablero[fila][col];
                 Celda nueva = tablero.tablero[nuevaFila][nuevaCol];
                 if(nueva.caracterCelda()=='O'){
@@ -71,7 +72,7 @@ public class Juego {
                 anterior.caracter = null;
                 
                 pacman.posicion = new Posicion(nuevaFila, nuevaCol);
-                System.out.println(pacman.puntosVida);
+                System.out.println("Te quedan: "+pacman.puntosVida+" vidas");
                 // Aquí hay que verificar si el jugador ganó el juego
                 // Esto es, si llega a una parte del laberinto
                 // que es una salida
@@ -113,6 +114,7 @@ public class Juego {
             double arepita = Math.random(); 
         if(arepita<0.5){
              pacman.resta();
+             System.out.println("OHHH, has caído en una BOMBA!!");
              if(pacman.puntosVida <=0){
                 perdiste = true;
                 return false;
@@ -120,6 +122,7 @@ public class Juego {
         }
          else if(arepita>=0.5){
                 pacman.suma();
+                System.out.println("Caíste en una arepita buena, tienes un punto de vida mas!!");
             }
         }
         

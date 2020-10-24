@@ -1,4 +1,4 @@
-
+import java.util.Random;
 
 /**
  * En esta clase se mantiene la información del tablero
@@ -64,22 +64,22 @@ public class Tablero {
         numCols = lineScan.nextInt();
         // Definir el tamaño del tablero
         tablero = new Celda[numFilas][numCols];
-        int arepitas = 0;
+        
         // Leer cada una de las filas que conforman el laberinto
         for (int fila = 0; fila < numFilas; fila++) {
             linea = archivo[i];
             i++;
+            int arepitas = 0;
             for (int col = 0; col < numCols; col++) {
-                  
-                  long filaR = Math.round(Math.random()*14);
-                  long colR = Math.round(Math.random()*16);
                   char c = linea.charAt(col);
-                  char l = linea.charAt((int)colR);
-                if(l==' '&& arepitas<=10){
-                 l = '.';
-                 arepitas++;
-                }
-                
+                  Random rand = new Random();
+                  int l = rand.nextInt(numCols);
+                  if(l==col && c!='*'){
+                     c = '.'; 
+                    }
+                  /*if(linea.charAt(l) == ' '){
+                     linea.charAt(l) = '.';
+                    }*/
                 // esMuro, esSalida, tienearepita, caracter
                     if (c == '*') {
                     tablero[fila][col] = new Celda(true, false, false, null);
@@ -140,5 +140,7 @@ public class Tablero {
         }
         System.out.println(s);
     }
+    
+    
 
 }

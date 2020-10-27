@@ -64,12 +64,13 @@ public class Juego {
             if (validarCasilla(nuevaFila, nuevaCol)&&!teclaInvalida) {
                 Celda anterior = tablero.tablero[fila][col];
                 Celda nueva = tablero.tablero[nuevaFila][nuevaCol];
-                if(nueva.caracterCelda()=='O'){
+                if(tablero.tablero[nuevaCol][nuevaFila].caracterCelda()=='O'){
                     ganaElJuego = true;
                 }
-                
+               
                 nueva.caracter = pacman;
                 anterior.caracter = null;
+                nueva.tieneArepita = false;
                 
                 pacman.posicion = new Posicion(nuevaFila, nuevaCol);
                 System.out.println("Te quedan: "+pacman.puntosVida+" vidas");
@@ -77,7 +78,7 @@ public class Juego {
                 // Esto es, si llega a una parte del laberinto
                 // que es una salida
             }
-          if(!ganaElJuego&&!perdiste){ //machetazo
+          if(!ganaElJuego&&!perdiste){ 
                 tablero.dibujarTablero();
             linea = in.nextLine();
         }
@@ -102,6 +103,7 @@ public class Juego {
      * @param nuevaCol Columna hacia donde se quiere mover el usuario
      * @return true si es una jugada válida, false de lo contrario
      */
+    
     private boolean validarCasilla(int nuevaFila, int nuevaCol) {
         // Aquí hay que verificar que sea un movimiento válido
         // Ver los comentarios del método
@@ -110,8 +112,8 @@ public class Juego {
         if(nueva.caracterCelda() =='*'){
             return false;
         }
-        if(nueva.caracterCelda()=='.'){
-            double arepita = Math.random(); 
+        if(nueva.caracterCelda()=='.'){   
+            double arepita = Math.random();
         if(arepita<0.5){
              pacman.resta();
              System.out.println("OHHH, has caído en una BOMBA!!");
@@ -129,4 +131,6 @@ public class Juego {
         
         return true;
     }
+    
+     
 }

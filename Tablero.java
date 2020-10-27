@@ -77,9 +77,7 @@ public class Tablero {
                   if(l==col && c!='*'){
                      c = '.'; 
                     }
-                  /*if(linea.charAt(l) == ' '){
-                     linea.charAt(l) = '.';
-                    }*/
+                    
                 // esMuro, esSalida, tienearepita, caracter
                     if (c == '*') {
                     tablero[fila][col] = new Celda(true, false, false, null);
@@ -123,7 +121,6 @@ public class Tablero {
         }
 
     }
-
     /**
      * En este método se dibuja el tablero.
      * A cada celda se le invoca el métoco "caracterCelda", que devuelve
@@ -133,14 +130,18 @@ public class Tablero {
         String s = "";
         for (int fila = 0; fila < numFilas; fila++) {
             for (int col = 0; col < numCols; col++) {
-                
-                 s += tablero[fila][col].caracterCelda();
+                 s+= tablero[fila][col].caracterCelda();
             }
             s += "\n";
         }
         System.out.println(s);
     }
+   
+    
     
     
 
 }
+
+
+

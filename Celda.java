@@ -3,6 +3,8 @@
 /**
  * En esta clase se guarda la información de una celda y su contenido
  * @author Helmuth Trefftz
+ * @author Juan Camilo Salazar
+ * @author Federico Velez
  */
 public class Celda {
     boolean esMuro;             // True si esta celda es muro (pared)

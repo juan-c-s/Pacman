@@ -64,9 +64,10 @@ public class Juego {
             if (validarCasilla(nuevaFila, nuevaCol)&&!teclaInvalida) {
                 Celda anterior = tablero.tablero[fila][col];
                 Celda nueva = tablero.tablero[nuevaFila][nuevaCol];
-                
-               
-               
+                if(nueva.caracterCelda()=='O'){
+                     nueva.esSalida = true;
+                    ganaElJuego = true;
+                }
                 nueva.caracter = pacman;
                 anterior.caracter = null;
                 nueva.tieneArepita = false;
@@ -76,9 +77,7 @@ public class Juego {
                 // Aquí hay que verificar si el jugador ganó el juego
                 // Esto es, si llega a una parte del laberinto
                 // que es una salida
-                 if(nueva.caracterCelda()=='O'){
-                    ganaElJuego = true;
-                }
+                 
             }
           if(!ganaElJuego&&!perdiste){ 
                 tablero.dibujarTablero();

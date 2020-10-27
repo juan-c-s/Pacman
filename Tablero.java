@@ -74,7 +74,7 @@ public class Tablero {
                   char c = linea.charAt(col);
                   Random rand = new Random();
                   int l = rand.nextInt(numCols);
-                  if(l==col && c!='*'){
+                  if(l==col && c!='*'&&!(l==1&&fila==1)){
                      c = '.'; 
                     }
                     

@@ -22,7 +22,7 @@ public class Juego {
      * Se crea un tablero
      */
     public Juego() {
-        tablero = new Tablero(this); //investigar el uso de this como parámetro
+        tablero = new Tablero(this); 
     }
 
     /**
@@ -64,9 +64,8 @@ public class Juego {
             if (validarCasilla(nuevaFila, nuevaCol)&&!teclaInvalida) {
                 Celda anterior = tablero.tablero[fila][col];
                 Celda nueva = tablero.tablero[nuevaFila][nuevaCol];
-                if(tablero.tablero[nuevaCol][nuevaFila].caracterCelda()=='O'){
-                    ganaElJuego = true;
-                }
+                
+               
                
                 nueva.caracter = pacman;
                 anterior.caracter = null;
@@ -77,6 +76,9 @@ public class Juego {
                 // Aquí hay que verificar si el jugador ganó el juego
                 // Esto es, si llega a una parte del laberinto
                 // que es una salida
+                 if(nueva.caracterCelda()=='O'){
+                    ganaElJuego = true;
+                }
             }
           if(!ganaElJuego&&!perdiste){ 
                 tablero.dibujarTablero();
@@ -112,6 +114,7 @@ public class Juego {
         if(nueva.caracterCelda() =='*'){
             return false;
         }
+        
         if(nueva.caracterCelda()=='.'){   
             double arepita = Math.random();
         if(arepita<0.5){

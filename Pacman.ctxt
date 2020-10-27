@@ -3,6 +3,7 @@ comment0.target=Pacman
 comment0.text=\n\ En\ esta\ clase\ se\ guarda\ la\ informaci\u00F3n\ acerca\ del\ Pacman\n\ El\ Pacman\ extiende\ la\ clase\ Caracter,\ y\ por\ lo\ tanto\ hereda\ sus\n\ atributos\ y\ m\u00E9todos\n\ @author\ Juan\ Camilo\ Salazar\ y\ Federico\ Velez\n
 comment1.params=tipo\ posicion\ representacion\ puntosVida
 comment1.target=Pacman(int,\ Posicion,\ char,\ int)
+comment1.text=\n\ @param\ tipo\ int,\ que\ ser\u00EDa\ \n\ @param\ posicion\ Posicion,\ la\ posici\u00F3n\ del\ pacman\ en\ el\ tablero\ que\ contiene\ su\ correspondiente\ fila\ y\ columna\n\ @param\ representacion\ char,\ que\ ser\u00EDa\ la\ representaci\u00F3n\ en\ el\ tablero\ del\ Pacman\n\ @param\ puntosVida\ int\ que\ ser\u00EDa\ los\ puntos\ de\ vida\ del\ Pacman\n
 comment2.params=
 comment2.target=int\ resta()
 comment2.text=\n\ @return\ puntoVida\ con\ la\ resta\ respectiva\n

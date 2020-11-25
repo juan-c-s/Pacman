@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Caracter
+comment0.text=\n\ Informaci\u00F3n\ acerca\ del\ Caracter\n\ Tanto\ el\ Pacman\ como\ los\ Fantasmas\ son\ caracteres\n\ @author\ Helmuth\ Trefftz\n
+comment1.params=tipo\ posicion\ representacion
+comment1.target=Caracter(int,\ Posicion,\ char)
+comment1.text=\n\ Constructor\n\ @param\ tipo\ tipo\ de\ caraccter\ (ver\ las\ constantes\ al\ comienzo\ de\ la\ clase\ Caracter)\n\ @param\ posicion\ posici\u00F3n\ actual\ del\ caracter\ en\ fila\ y\ columna\n\ @param\ representacion\ \ caracter\ que\ representa\ a\ este\ caracter\n
+numComments=2

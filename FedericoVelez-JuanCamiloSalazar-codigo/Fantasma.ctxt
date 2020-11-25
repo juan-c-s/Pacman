@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Fantasma
+comment0.text=\n\ Write\ a\ description\ of\ class\ Fantasma\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=tipo\ posicion\ representacion
+comment1.target=Fantasma(int,\ Posicion,\ char)
+numComments=2

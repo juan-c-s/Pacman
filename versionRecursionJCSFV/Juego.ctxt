@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Juego
+comment1.params=
+comment1.target=Juego()
+comment1.text=\n\ Constructor\n\ Se\ crea\ un\ tablero\n
+comment2.params=
+comment2.target=void\ jugar()
+comment2.text=\n\ Interacci\u00F3n\ con\ el\ usuario\n
+comment3.params=nuevaFila\ nuevaCol
+comment3.target=boolean\ validarCasilla(int,\ int)
+comment3.text=\n\ En\ este\ metodo\ se\ debe\ chequear\ las\ siguientes\ condiciones\:\n\ (i)\ Que\ el\ usuario\ no\ se\ salga\ de\ las\ filas\ del\ tablero\n\ (ii)\ Que\ el\ usuario\ no\ se\ salga\ de\ las\ columnas\ del\ tablero\n\ (iii)\ Que\ la\ posici\u00F3n\ no\ sea\ un\ muro\n\ (iv)\ Que\ no\ haya\ un\ caracter\ en\ esa\ posici\u00F3n\n\ \n\ @param\ nuevaFila\ Fila\ hacia\ donde\ se\ quiere\ mover\ el\ usuario\n\ @param\ nuevaCol\ Columna\ hacia\ donde\ se\ quiere\ mover\ el\ usuario\n\ @return\ true\ si\ es\ una\ jugada\ v\u00E1lida,\ false\ de\ lo\ contrario\n
+comment4.params=fila\ col
+comment4.target=boolean\ encontrarRuta(int,\ int)
+numComments=5

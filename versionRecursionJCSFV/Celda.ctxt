@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Celda
+comment0.text=\n\ En\ esta\ clase\ se\ guarda\ la\ informaci\u00F3n\ de\ una\ celda\ y\ su\ contenido\n\ @author\ Helmuth\ Trefftz\n
+comment1.params=esMuro\ esSalida\ tieneArepita\ caracter
+comment1.target=Celda(boolean,\ boolean,\ boolean,\ Caracter)
+comment1.text=\n\ Constructor\n\ @param\ esMuro\ true\ si\ esta\ celda\ es\ muro,\ false\ de\ lo\ contrario\n\ @param\ esSalida\ true\ si\ esta\ celda\ es\ Salida,\ false\ de\ lo\ contrario\n\ @param\ tieneArepita\ true\ si\ esta\ celda\ tiene\ una\ arepita,\ false\ de\ lo\ contrario\n\ @param\ caracter\ \ referencia\ al\ caracter\ que\ ocupa\ la\ celda,\ o\ null\ si\ no\ hay\ caracter\n
+comment2.params=
+comment2.target=char\ caracterCelda()
+comment2.text=\n\ Retorna\ el\ caracter\ con\ el\ que\ se\ representa\ esta\ celda\n\ @return\ caracter\ que\ representa\ el\ contenido\ de\ la\ celda\n
+numComments=3

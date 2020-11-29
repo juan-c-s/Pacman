@@ -17,6 +17,7 @@ public class Juego {
     Tablero tablero;
     Fantasma fantasma;
     Pacman pacman;
+   
     boolean perdiste = false;
     /**
      * Constructor
@@ -29,6 +30,10 @@ public class Juego {
     /**
      * Interacción con el usuario
      */
+    public void moverseSolo(){
+        tablero.dibujarTablero();
+        
+    }
     public void jugar() {
         boolean ganaElJuego = false;
         tablero.dibujarTablero();
@@ -41,6 +46,8 @@ public class Juego {
             int colFantasma = fantasma.posicion.col;
             int nuevaFila = fila;
             int nuevaCol = col;
+            int anteriorFantasmaFila =fantasma.posicion.col;
+            int anteriorFantasmaCol = fantasma.posicion.fila;
             boolean teclaInvalida = false;
             switch (linea) {
                 // En este punto se inserta el código para las teclas
@@ -77,9 +84,9 @@ public class Juego {
                 
                 Celda anteriorFantasma = tablero.tablero[filaFantasma][colFantasma];
                 anteriorFantasma.caracter = null;
+                
                 if(sePuedeVerFila(nuevaFila)){
                    if(colFantasma<nuevaCol){
-                       
                        colFantasma += 2;
                     }else {
                         colFantasma -= 2;
@@ -90,13 +97,20 @@ public class Juego {
                        filaFantasma += 2;
                     }else filaFantasma -= 2;
                 }
-                else if((sePuedeVerFila(nuevaFila))&&(sePuedeVerCol(nuevaCol))){
-                    perdiste = true;
+                if(!((sePuedeVerFila(nuevaFila))||(sePuedeVerCol(nuevaCol)))){
+                    Posicion posicionRandom = moverFantasma(filaFantasma,colFantasma);
+                    if(validarCasillaFantasma( posicionRandom.fila,posicionRandom.col)){
+                    filaFantasma = posicionRandom.fila;
+                    colFantasma = posicionRandom.col;
                 }
-                if(validarCasilla(filaFantasma,colFantasma)){
-                    Celda nuevaFantasma = tablero.tablero[filaFantasma][colFantasma];
+                }
+                
+                Celda nuevaFantasma = tablero.tablero[filaFantasma][colFantasma];
+                if(validarCasillaFantasma(filaFantasma,colFantasma)){  
                     nuevaFantasma.caracter = fantasma;
-            }
+                    fantasma.posicion = new Posicion(filaFantasma,colFantasma);//-------------------
+                }
+                
                 
                 /**
                  * 1. Fantasma ve al Pacman? 
@@ -105,18 +119,32 @@ public class Juego {
                  * 2. Validar Casilla Fantasma con posicion random
                  *      a. Si validarCasilla es false, ent no se debe mover
                  *      b. Si es true, mover fantasma
+                 *      
+                 *      
+                 *  3. Que pierda el juego cuando el fantasma esta en la misma posicion del àckman
+                 *  
+                 *  4. No se puede saltar las paredes
+                 *  5. 
                  * 
                  */
+                 
                 
                 System.out.println(colFantasma);
                 System.out.println(filaFantasma);
 
-                fantasma.posicion = new Posicion(filaFantasma,colFantasma);
                 pacman.posicion = new Posicion(nuevaFila, nuevaCol);
                 System.out.println("Te quedan: "+pacman.puntosVida+" vidas");
                 // Aquí hay que verificar si el jugador ganó el juego
                 // Esto es, si llega a una parte del laberinto
                 // que es una salida
+                 System.out.println("Fantasma: " + fantasma.posicion.fila+","+ fantasma.posicion.col);
+                    System.out.println("Pacman: " + pacman.posicion.fila+","+ pacman.posicion.col);
+                    if((fantasma.posicion.fila==pacman.posicion.fila)&&(fantasma.posicion.col==pacman.posicion.col)){
+                    perdiste = true;
+                    System.out.println("igual");
+                   
+                   
+                }
                  
             }
           if(!ganaElJuego&&!perdiste){ 
@@ -209,5 +237,17 @@ public class Juego {
             colF -= 2;
         }
         return new Posicion(filaF,colF);
+    }
+    private boolean validarCasillaFantasma(int filaFantasma, int colFantasma){
+        Celda nueva1 = tablero.tablero[filaFantasma][colFantasma];
+        Celda nueva2 = tablero.tablero[filaFantasma][colFantasma-1];
+        if(nueva1.caracterCelda() =='*'){
+            return false;
+        }
+        if(nueva2.caracterCelda() =='*'){
+            return false;
+        }
+        
+        return true;
     }
 }

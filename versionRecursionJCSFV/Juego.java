@@ -13,7 +13,6 @@ public class Juego {
     /**
      * El número de puntos iniciales de vida del pacman
      */
-    public static final int PUNTOS_VIDA_INICIALES = 10;
     Tablero tablero;
     Pacman pacman;
      ArrayList<Celda> visitadas = new ArrayList<>();

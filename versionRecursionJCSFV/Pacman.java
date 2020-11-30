@@ -10,7 +10,7 @@ public class Pacman extends Caracter {
     // Cuántos puntos de vida tiene el Pacman
     int puntosVida;
 
-    public Pacman(int tipo, Posicion posicion, char representacion, int puntosVida) {
+    public Pacman(int tipo, Posicion posicion, char representacion) {
         super(tipo, posicion, representacion);
         this.puntosVida = puntosVida;
     }

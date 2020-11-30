@@ -96,7 +96,7 @@ public class Tablero {
                 int fila = lineScan.nextInt();
                 int col = lineScan.nextInt();
                 Posicion posicion = new Posicion(fila, col);
-                juego.pacman = new Pacman(Caracter.PACMAN, posicion, 'X', Juego.PUNTOS_VIDA_INICIALES);
+                juego.pacman = new Pacman(Caracter.PACMAN, posicion, 'X');
                 tablero[posicion.fila][posicion.col].caracter = juego.pacman;
             } else if (linea.charAt(0) == 'O') {
                 // La información de la salida del laberinto

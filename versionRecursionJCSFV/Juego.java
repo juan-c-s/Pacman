@@ -63,9 +63,9 @@ public class Juego {
     }
     public boolean encontrarRuta(int fila, int col){
         try{
-            Thread.sleep(100);
+            Thread.sleep(500);
         }       
-        catch(InterruptedException ex){
+        catch(InterruptedException excepcion){
             Thread.currentThread().interrupt();
         }
         
